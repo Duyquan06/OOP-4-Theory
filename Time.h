@@ -19,12 +19,12 @@ class Time
         void setMin( int );
         void setSec( int );
 
-        int get_Abs_Sec();
-        void set_Abs_Sec();
+        unsigned int get_Abs_Sec();
+        void set_Abs_Sec( unsigned int );
 
         int compare( const Time &);
-        Time dis( const Time &);
-        void add_Sec( int );
+        unsigned int dis( const Time &);
+        Time add_Sec( unsigned int );
 
         bool operator >  ( const Time & );
         bool operator <  ( const Time & );
@@ -33,8 +33,9 @@ class Time
         bool operator <= ( const Time & );
         bool operator != ( const Time & );
 
-        Time& operator + ( int );
+        Time& operator + ( unsigned int );
         Time& operator ++ ();
+        Time operator ++ ( int );
 
        friend std::ostream& operator << ( std::ostream &out, const Time & );
        friend std::istream& operator >> ( std::istream &in, Time & );
